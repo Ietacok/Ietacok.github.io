@@ -14,10 +14,12 @@
 
          <div id="menu_bar">
           <div id="left-menu_bar">
-
+          
           </div>
           <div id="right-menu_bar">
-
+           <?php 
+            echo "Echo test";
+           ?>        
           </div>
          </div>
 
