@@ -1,7 +1,7 @@
 let awaiting_callbacks = [];
 let loaded = false;
 
-function add_callback(callback)
+function Add_Callback(callback)
 {
  if (loaded) 
  {

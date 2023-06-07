@@ -76,19 +76,19 @@ class ScreenBox_2D extends _Object{
     {
      this.Vertices[0] = -1; // x left top
      this.Vertices[1] = -1; // y
-     this.Vertices[2] = -1; // z is always 0
+     this.Vertices[2] = 0; // z is always 0
 
      this.Vertices[3] = 1; // right top
      this.Vertices[4] = -1;
-     this.Vertices[5] = -1; // 
+     this.Vertices[5] = 0; // 
 
      this.Vertices[6] = -1; // bottom left
      this.Vertices[7] = 1;
-     this.Vertices[8] = -1; //
+     this.Vertices[8] = 0; //
 
      this.Vertices[9] = 1; //bottom right
      this.Vertices[10] = 1;
-     this.Vertices[11] = -1; // 
+     this.Vertices[11] = 0; // 
 
      this.Triangles[0] = -1; // left top
      this.Triangles[1] = 1; // right top
