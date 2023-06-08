@@ -1,0 +1,25 @@
+#content {
+ overflow-y: auto;
+ padding-left: var(--o-s);
+ width: 100%;
+ height: 90%;
+ background-color: var(--col3);
+}
+
+#main {
+ position: fixed;
+ height: 100%;
+ left: 0px;
+ top: 0px
+}
+
+#footer {
+    background-color: var(--col2);
+    padding-top: var(--o-s);
+    padding-left: var(--o-s);
+    height: 10%;
+}
+
+.offset {
+    padding-left: var(--o-s);
+}

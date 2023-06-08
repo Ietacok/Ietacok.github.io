@@ -2,30 +2,66 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+
     <title>HTML, CSS, JS, PHP</title>
+
     <script src="../../../scripts/onload.js"></script>
     <script src="../../../scripts/add_links.js"></script>
+
+    <link rel="stylesheet" href="../../../styles/text-styles.css">
+    <link rel="stylesheet" href="../../../styles/color-styles.css">
+    <link rel="stylesheet" href="../../../styles/offsets.css">
+    <link rel="stylesheet" href="./styles/text-styles.css">
+    <link rel="stylesheet" href="./styles/main-styles.css">
+
 </head>
  <body>
     <div id="main">
         <div id="main_bar">
-
+         <!--Opcje/Główna strona-->
         </div>
         <div id="content">
+            <div id="topic">
+             <p class="text large-text">
+               HTML, CSS, JavaScript i PHP
+             </p>
+            </div>
             <div id="html_content">
+             <label class="text text large-text">
+              HTML
+             </label>
+             <p class="text large-2-text offset">
+                HTML pozwala opisać strukturę informacji zawartych wewnątrz strony internetowej, nadając odpowiednie znaczenie semantyczne poszczególnym fragmentom tekstu – formując hiperłącza, akapity, nagłówki, listy – oraz osadza w tekście dokumentu obiekty plikowe, na przykład multimedia, lub elementy baz danych, na przykład interaktywne formularze danych.
 
+HTML umożliwia określenie wyglądu dokumentu w przeglądarce internetowej. Do szczegółowego opisu formatowania akapitów, nagłówków, użytych czcionek i kolorów, zalecane jest wykorzystywanie kaskadowych arkuszy stylów (w skrócie CSS).
+            </p>
             </div>
             <div id="css_content">
-
+                <label class="text large-text">
+                    CSS
+                </label>
+                <p class="text large-2-text offset">Kaskadowe arkusze stylów ( CSS ) to język arkuszy stylów używany do opisywania prezentacji dokumentu napisanego w języku znaczników , takim jak HTML lub XML (w tym dialekty XML, takie jak SVG , MathML lub XHTML ). CSS jest podstawą technologii World Wide Web , obok HTML i JavaScript . </p>
+                <p class="text large-2-text offset">CSS został zaprojektowany w celu umożliwienia oddzielenia treści i prezentacji , w tym układu , kolorów i czcionek. Ta separacja może poprawić dostępność treści ; zapewniają większą elastyczność i kontrolę przy określaniu cech prezentacji; umożliwić wielu stronom internetowym współdzielenie formatowania poprzez określenie odpowiedniego CSS w osobnym pliku .css, co zmniejsza złożoność i powtarzalność treści strukturalnej; i włącz buforowanie pliku .css, aby poprawić szybkość ładowania strony między stronami współdzielącymi plik i jego formatowanie.</p>
             </div>
             <div id="js_content">
-
+                <label class="text large-text">
+                    JS
+                </label>
+                <p class="text large-2-text offset">JavaScript, w skrócie JS – skryptowy oraz wieloparadygmatowy język programowania, stworzony przez firmę Netscape, najczęściej stosowany na stronach internetowych. Twórcą JavaScriptu jest Brendan Eich. W połowie lat 90. XX wieku organizacja ECMA wydała na podstawie JavaScriptu standard języka skryptowego o nazwie ECMAScript, aktualnie rozwijaniem tego standardu zajmuje się komisja TC39.</p>
+            </div>
+            <div id="php_content">
+                <label class="text large-text">
+                    PHP
+                </label>
+                <p class="text large-2-text offset">
+                    PHP – interpretowany, skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym.
+                </p>
+                <p class="text large-2-text offset">
+                    PHP jest najczęściej stosowany do tworzenia skryptów po stronie serwera WWW, ale może być on również używany do przetwarzania danych z poziomu wiersza poleceń, a nawet do pisania programów pracujących w trybie graficznym (np. za pomocą biblioteki GTK+, używając rozszerzenia PHP-GTK). Implementacja PHP wraz z serwerem WWW Apache oraz serwerem baz danych MySQL określana jest jako platforma AMP (w środowisku Linux – LAMP, w Windows – WAMP).
+                </p>
             </div>
         </div>
         <div id="footer">
-            <p id="finishing_text">
-                Wykonane przez ietacok (GitHub)
-            </p>
             <script>
              Add_Callback(
                 function()

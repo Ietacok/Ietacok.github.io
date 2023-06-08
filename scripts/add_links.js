@@ -1,28 +1,23 @@
 
-let Links = {
-   0: "https://github.com/Ietacok",
-}
+let Links = [];
+Links.push("https://github.com/Ietacok");
 
 function FindDirectorySearch(url) {
    let slashCount = 0;
    let directoryStartIndex = -1;
+   let urlc = "";
  
    for (let i = 0; i < url.length; i++) {
      if (url[i] === "/") {
        slashCount++;
        if (slashCount === 3) {
-         directoryStartIndex = i;
          break;
        }
      }
+     urlc += url[i];
    }
  
-   if (directoryStartIndex !== -1) {
-     const directorySearch = url.substring(directoryStartIndex);
-     return directorySearch;
-   } else {
-     return ""; // If the third slash is not found, return an empty string or handle the case accordingly.
-   }
+   return urlc;
  }
 function Add_Links(object)
 {
@@ -34,7 +29,9 @@ function Add_Links(object)
  for (let i = 0;i < Links.length;i++)
  {
    let link = Links[i];
-   let dir = FindDirectorySearch(link)+"favicon.ico";
+   let dir = FindDirectorySearch(link)+"/favicon.ico";
+
+   console.log(dir)
    
    let a_object = document.createElement("a");
    let img_object = document.createElement("img");

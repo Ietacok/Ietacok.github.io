@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Papers";
+    src: url("../fonts/Signika_Negative/SignikaNegative-VariableFont_wght.ttf"); /*/Font: https://fonts.google.com/specimen/Signika+Negative/*/
+}
+
+.huge-text {
+    font-size: 55px; 
+}
+
+.huge-2-text {
+    font-size: larger;
+}
+
+.large-text {
+    font-size: 45px;
+}
+
+.large-2-text{
+    font-size: large;
+}
+
+.medium-text {
+    font-size: 30px;
+}
+
+.medium-2-text{
+    font-size: medium;
+}
+
+.small-text {
+    font-size: 15px;
+}
+
+.small-2-test {
+    font-size: small;
+}
+
+.tiny-text {
+    font-size: 10px;
+}
+
+.tiny-2-text {
+    font-size: smaller;
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
