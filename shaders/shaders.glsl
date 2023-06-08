@@ -1,9 +1,9 @@
-#version 300
-
+#version 300 es
 
 varying vec2 position_2d;
 varying float time;
 varying float max_time;
+varying vec2 dimensions;
 
 #if defined(VERTEX)
 
@@ -16,15 +16,15 @@ void main()
 
 float distance_elipse(vec2 vector)
 {
- return vector.x*vector.x + vector.y+vector.y; 
+ return  pow(vector.x*vector.x,0.5) + pow(vector.y*vector.y,0.5); 
 }
 
 void main()
 {
- vec2 object_space_position = gl_FragCoord - position_2d;
+ vec2 object_space_position = (gl_FragCoord - position_2d) / dimensions; 
+ float dist = max(1 - distance_elipse(object_space_position),0);
 
-
- gl_FragColor = vec4(object_space_position.x,object_space_position.y,object_space_position.x,0.0);
+ gl_FragColor = vec4(dist,dist,dist,0.0);
 }
 
 #endif
