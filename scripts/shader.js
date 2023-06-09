@@ -12,13 +12,13 @@ class Shader
   {
    let XHR = new XMLHttpRequest();
 
-   XHR.open("GET",Source+"\\frag.glsl");
+   XHR.open("GET",Source+"/frag.glsl");
    
    XHR.onload = function()
    {
     this.Sourcefrag = XHR.responseText;
     
-    XHR.open("GET",Source+"\\vert.glsl");
+    XHR.open("GET",Source+"/vert.glsl");
 
     XHR.onload = function()
     {
