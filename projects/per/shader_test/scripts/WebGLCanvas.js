@@ -36,7 +36,7 @@ function Initialize()
  WebGLContext.compileShader(vert_shader);
  
  frag_shader = WebGLContext.createShader(WebGLContext.FRAGMENT_SHADER);
- WebGLContext.shaderSoucre(frag_shader,MainShader.Sourcefrag);
+ WebGLContext.shaderSource(frag_shader,MainShader.Sourcefrag);
  WebGLContext.compileShader(frag_shader);
 
  WebGLContext.attachShader(Program,vert_shader);
