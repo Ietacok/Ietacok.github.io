@@ -73,6 +73,7 @@ function Initialize()
 
 async function Main()
 {
+    console.log("Loading");
   while (!MainShader.isLoaded)
   {
    await Wait(1);
