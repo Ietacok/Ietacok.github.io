@@ -6,31 +6,34 @@ class Shader
  Shader = null;
  isLoaded = false;
 
- constructor(Source,isURL = false,type="frag")
+ constructor(Source,isURL = false)
  {
   if(isURL)
   {
-   let loaded = false;
-   
    let XHR = new XMLHttpRequest();
 
-   XHR.open("GET",Source+"\\" + type + ".glsl");
+   XHR.open("GET",Source+"\\frag.glsl");
    
    XHR.onload = function()
    {
-    this["Source"+type] = XHR.responseText;
-    this.isLoaded = true;
-    XHR.onerror = null;
-    XHR.onload = null;
+    this.Sourcefrag = XHR.responseText;
+    
+    XHR.open("GET",Source+"\\vert.glsl");
+
+    XHR.onload = function()
+    {
+     this.Sourcevert = XHR.responseText;
+     this.isLoaded = true;
+     XHR.onerror = null;
+     XHR.onload = null;
+    }
+
+    XHR.send();
+  
    }
 
-   XHR.onerror = function()
-   {
-    console.log("Failed to load");
-    this.isLoaded = true;
-    XHR.onerror = null;
-    XHR.onload = null;
-   }
+
+   XHR.send();
 
    return; 
   }
