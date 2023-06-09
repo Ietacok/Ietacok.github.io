@@ -71,8 +71,14 @@ function Initialize()
     );
 }
 
-function Main()
+async function Main()
 {
+  while (!MainShader.isLoaded)
+  {
+   await Wait(1);
+   continue;
+  }
+   
  Initialize();
  GameLoop();
 }

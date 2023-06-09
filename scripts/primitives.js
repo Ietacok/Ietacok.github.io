@@ -74,6 +74,7 @@ class GameObject {
 class ScreenBox_2D extends _Object{
     constructor()
     {
+     super();
      this.Vertices[0] = -1; // x left top
      this.Vertices[1] = -1; // y
      this.Vertices[2] = 0; // z is always 0
@@ -100,7 +101,7 @@ class ScreenBox_2D extends _Object{
     }
 }
 
-class Polygon extends _Object() //Structurally there is no difference between ScreenBox_2D and Polygon class, the difference is in how they are initialized
+class Polygon extends _Object //Structurally there is no difference between ScreenBox_2D and Polygon class, the difference is in how they are initialized
 {
   constructor()
   {

@@ -1,4 +1,3 @@
-async function Wait(s)
-{
- await Promise.new(setTimeout(() => {},s*1000));
-}
+function Wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }

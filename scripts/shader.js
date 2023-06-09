@@ -4,7 +4,7 @@ class Shader
  Sourcevert = null;
  Program = null;
  Shader = null;
- isCompiled = false;
+ isLoaded = false;
 
  constructor(Source,isURL = false,type="frag")
  {
@@ -19,15 +19,19 @@ class Shader
    XHR.onload = function()
    {
     this["Source"+type] = XHR.responseText;
-    loaded = true;
+    this.isLoaded = true;
+    XHR.onerror = null;
+    XHR.onload = null;
    }
 
-   while (!loaded)
+   XHR.onerror = function()
    {
-    Wait(0.01);
-    continue;
+    console.log("Failed to load");
+    this.isLoaded = true;
+    XHR.onerror = null;
+    XHR.onload = null;
    }
-   
+
    return; 
   }
   this["Source"+type] = Source;
