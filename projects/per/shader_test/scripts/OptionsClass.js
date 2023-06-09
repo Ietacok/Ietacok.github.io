@@ -1,4 +1,4 @@
-class Options
+class Options_
 {
  WidthRes = 360;
  HeightRes = 480;

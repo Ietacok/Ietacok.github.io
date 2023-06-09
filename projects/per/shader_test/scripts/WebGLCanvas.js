@@ -1,7 +1,7 @@
 let CanvasObject = null;
 let WebGLContext = null;
 let CanvasScreenBox_2D = new ScreenBox_2D();
-let UserOptions = new Options();
+let UserOptions = new Options_();
 let MainShader = new Shader("./shaders/main_shader",true); //Source : string , IsUrl : boolean
 let vert_shader = null;
 let frag_shader = null;
