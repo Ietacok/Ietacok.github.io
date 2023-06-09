@@ -6,7 +6,7 @@ class Shader
  Shader = null;
  isLoaded = false;
 
- constructor(Source,isURL = false)
+ constructor(Source,isURL = false,type="vert")
  {
   if(isURL)
   {
