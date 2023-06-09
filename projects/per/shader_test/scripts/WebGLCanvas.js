@@ -78,6 +78,7 @@ async function Main()
    await Wait(1);
    continue;
   }
+  console.log("Loaded");
    
  Initialize();
  GameLoop();
