@@ -6,8 +6,9 @@ class Shader
  Shader = null;
  isLoaded = false;
 
- constructor(Source,isURL = false,type="vert")
+ constructor(Source,isURL = false,type)
  {
+  let that = this;
   if(isURL)
   {
    let XHR = new XMLHttpRequest();
@@ -16,14 +17,14 @@ class Shader
    
    XHR.onload = function()
    {
-    this.Sourcefrag = XHR.responseText;
-    
+    that.Sourcefrag = XHR.responseText;
+
     XHR.open("GET",Source+"/vert.glsl");
 
     XHR.onload = function()
     {
-     this.Sourcevert = XHR.responseText;
-     this.isLoaded = true;
+     that.Sourcevert = XHR.responseText;
+     that.isLoaded = true;
      XHR.onerror = null;
      XHR.onload = null;
     }

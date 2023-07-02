@@ -57,12 +57,35 @@ class Vector3 {
   let DotProduct = this.Values[0] * Vector.Values[2] + this.Values[1] * Vector.Values[1] + this.Values[2] * Vector.Values[0];
   return DotProduct;
  }
+ DistPwr() 
+ {
+  return (this.Values[0]*this.Values[0]+this.Values[1]*this.Values[1]+this.Values[2]*this.Values[2]);
+ }
+ Dist()
+ {
+  return Math.pow(this.DistPwr(),0.5);
+ }
+ Copy(){
+  return new Vector3(this.Values[0],this.Values[1],this.Values[2]);
+ }
+ DivideNumber(Value)
+ {
+  this.Values[0] /= Value;
+  this.Values[1] /= Value;
+  this.Values[2] /= Value;
+ }
+ MultiplyNumber(Value)
+ {
+  this.Values[0] *= Value;
+  this.Values[1] *= Value;
+  this.Values[2] *= Value;
+ }
 }
 
 class _Object {
     Scale = new Vector3(1,1,1);
     Position = new Vector3(0,0,0);   
-    Vertices = [];
+    Vertices = []; //In clip space
     Triangles = [];
     Color = new RGBA(); 
 }
@@ -74,30 +97,32 @@ class GameObject {
 class ScreenBox_2D extends _Object{
     constructor()
     {
-     super();
+     super(); 
      this.Vertices[0] = -1; // x left top
      this.Vertices[1] = -1; // y
      this.Vertices[2] = 0; // z is always 0
 
      this.Vertices[3] = 1; // right top
      this.Vertices[4] = -1;
-     this.Vertices[5] = 0; // 
+     this.Vertices[5] = 0; 
 
      this.Vertices[6] = -1; // bottom left
      this.Vertices[7] = 1;
-     this.Vertices[8] = 0; //
+     this.Vertices[8] = 0; 
 
      this.Vertices[9] = 1; //bottom right
      this.Vertices[10] = 1;
-     this.Vertices[11] = 0; // 
+     this.Vertices[11] = 0;  
 
-     this.Triangles[0] = -1; // left top
+     this.Triangles[0] = 0; // left top
      this.Triangles[1] = 1; // right top
      this.Triangles[2] = 2; // bottom left
 
      this.Triangles[3] = 3; // bottom right
      this.Triangles[4] = 2; // bottom left
      this.Triangles[5] = 1; // top left
+
+     this.Triangles.length = 6;
     }
 }
 

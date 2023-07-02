@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,19 @@
     <script src="../../../scripts/wait.js"></script>
     <script src="../../../scripts/shader.js"></script>
     <script src="scripts/WebGLCanvas.js"></script>
-    <title>Shader Test</title>
+    <title>One million points!</title>
 </head>
- <body>
-    <div id="canvas_div" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%">
-     <canvas id="canvas" style="width: 100%; height: 100%; image-rendering: pixelated">
-     </canvas>
+<body>
+    <div id="main">
+        <p>
+            This is a shader which draws (1,000,000-1) points with help of GPU. <br>
+            CPU does simulate 10^6 points though. 
+        </p>
+        <div id="canvas_div">
+            <canvas id="canvas">
+             
+            </canvas>
+        </div>
     </div>
- </body>
+</body>
 </html>
