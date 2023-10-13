@@ -113,8 +113,8 @@ function RenderStep(time)
 
 function Logic()
 {
- CanvasObject.width = 1920; //UserOptions.ResWidth;
- CanvasObject.height = 1080; //UserOptions.ResHeight;
+ CanvasObject.width = 1000; //UserOptions.ResWidth;
+ CanvasObject.height = 1000; //UserOptions.ResHeight;
 }
 
 async function GameLoop()
