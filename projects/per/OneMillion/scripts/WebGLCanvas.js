@@ -35,7 +35,7 @@ function Simulation(time)
   deltaTime = 0;
  }
  else {
-  deltaTime = Math.min((time-prev)*0.001,1/100);
+  deltaTime = Math.min((time-prev)*0.001,1/60);
  }
 
   for (let i = 0;i < Points-1;i++)
