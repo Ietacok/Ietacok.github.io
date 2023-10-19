@@ -35,7 +35,7 @@ function RenderStep(time)
   deltaTime = 0;
  }
  else {
-  deltaTime = Math.max(time-prev*0.001,o60);
+  deltaTime = Math.min(time-prev*0.001,o60);
  }
 
   for (let i = 0;i < Points-1;i++)
