@@ -20,6 +20,7 @@ let PointsData = {
    Velocites: [],
    Colors: [],
 }
+const o60 = 1/60;
 
 let prev = null
 
@@ -34,7 +35,7 @@ function RenderStep(time)
   deltaTime = 0;
  }
  else {
-  deltaTime = (time-prev)*0.001;
+  deltaTime = Math.max(time-prev*0.001,o60);
  }
 
   for (let i = 0;i < Points-1;i++)
