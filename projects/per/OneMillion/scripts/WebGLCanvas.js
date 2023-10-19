@@ -10,6 +10,8 @@ let VertexBuffer = null;
 
 let Program = null;
 
+let DrawFinished = true;
+
 let Points = Math.pow(10,6);  
 let GravityPoint = new Vector3(0,0,0);
 let OperationVector = new Vector3(0,0,0);
@@ -20,14 +22,12 @@ let PointsData = {
    Velocites: [],
    Colors: [],
 }
-const o60 = 1/60;
 
 let prev = null
 
-function RenderStep(time)
+function Simulation(time)
 {
-
- let deltaTime = 0;
+  let deltaTime = 0;
 
  if (!prev)
  {
@@ -35,7 +35,7 @@ function RenderStep(time)
   deltaTime = 0;
  }
  else {
-  deltaTime = Math.min(time-prev*0.001,o60);
+  deltaTime = (time-prev)*0.001;
  }
 
   for (let i = 0;i < Points-1;i++)
@@ -95,7 +95,16 @@ function RenderStep(time)
    PointsData.Positions[pos_i+1] += PointsData.Velocites[pos_i+1]*deltaTime;
 
    GravityPoint = new Vector3(PointsData.Positions[pos_i],PointsData.Positions[pos_i+1]);
-   //
+   prev = time; 
+}
+
+async function RenderStep(time)
+{
+   if (!DrawFinished)
+   {
+    return;
+   }
+    DrawFinished = false;
 
    let VertexBuffer = WebGLContext.createBuffer();
    WebGLContext.bindBuffer(WebGLContext.ARRAY_BUFFER,VertexBuffer);
@@ -109,8 +118,14 @@ function RenderStep(time)
    WebGLContext.clear(WebGLContext.COLOR_BUFFER_BIT);
    WebGLContext.clearColor(0, 0, 0, 1.0);
    WebGLContext.drawArrays(WebGLContext.POINTS,0, Points);
-   prev = time; 
+  DrawFinished = true;
 } 
+
+function SimulateAndDraw(time)
+{
+ Simulation(time);
+ RenderStep(time);
+}
 
 function Logic()
 {
@@ -123,7 +138,7 @@ async function GameLoop()
  while(true)
  {
   Logic();
-  requestAnimationFrame(RenderStep); 
+  requestAnimationFrame(SimulateAndDraw); 
   await Wait(1);
  }
 }
